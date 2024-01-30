@@ -1,0 +1,18 @@
+/* Adjust the positioning and size of the form */
+.form-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 20vh;
+}
+
+.form-container h1 {
+    position: relative;
+    top: -10vh;
+}
+
+.form-container form {
+    width: 40%;
+}

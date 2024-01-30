@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CDN links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../static/javascript/index.js"></script>
+    <link href="../static/css/base.css" rel="stylesheet">
+    <!-- Create title that can be changed for each page -->
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <!-- Python logo that will be hidden until the menu button appears where it will appear again -->
+          <a class="navbar-brand" href="#">
+            <img src="../static/images/logo.png" alt="Python Logo" width="24" height="24" class="d-inline-block align-text-top python-logo-resize">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Move the navbar-brand into ul and wrap in li to center image -->
+            <ul class="navbar-nav mx-auto justify-content-center align-items-center">
+              <li class="nav-item">
+                <a class="navbar-brand" href="{{ url_for('index') }}">
+                    <img src="../static/images/logo.png" alt="Python Logo" width="24" height="24" class="d-inline-block align-text-top python-logo">
+                </a>
+              </li>
+              {% if not session.user %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('logout') }}">Log out</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <!-- The main content that will be different for each page -->
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

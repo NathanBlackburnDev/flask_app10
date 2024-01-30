@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}
+Register
+{% endblock %}
+{% block content %}
+<link href="../static/css/register.css" rel="stylesheet">
+<!-- Regiser account form -->
+<div class="form-container">
+    <h1>Create an account</h1>
+    <form action="/register" method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" aria-label="Username" placeholder="Username..." name="username">
+            <div id="emailHelp" class="form-text">Username Length: 5 - 12</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="user@example.com">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>    
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password..." name="password">
+            <div id="emailHelp" class="form-text">Password Length: 6 - 36</div>
+        </div>
+        <div class="mb-3">
+            <label for="confirm_password" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password..." name="confirm_password">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Agree to Terms & Conditions</label>
+        </div>
+
+        <!-- Terms & Conditions modal -->
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    I. Identification and Contact Information
+
+This website/application is operated by [Your Business]. Our principal place of business is located at [Your Business Address]. You can contact us by writing to the business address given above, by using our website contact form, by email to [Your Business Email], or by telephone on [Your Business Phone Number].
+II. Description of Products/Services
+
+[Your Business] provides [Description of the services your site/app provides].
+III. Limitation of Liability
+
+[Here you should include any statements that limit your liability. As these documents tend to be legally binding, we do recommend using a professional solution.] The Owner shall not be liable for any direct, indirect, incidental, consequential, or special damages arising out of or in connection with the use of the services or the website content.
+IV. User Accounts and Content Restrictions
+
+[Here you’ll want to add any rules you have for user accounts and your site. This are can include things like content restrictions. See example text ->] Users are prohibited from posting or transmitting through the [Your Business] site or service any unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, sexually explicit, discriminatory, or otherwise objectionable material of any kind, including but not limited to any material that encourages conduct that would constitute a criminal offense, give rise to civil liability, or otherwise violate any applicable local, state, national, or international law.
+V. Order Placement, Pricing, Payment Methods and Cancellation
+
+[If you sell products or services on your site, you’ll need to include a section like this on pricing, payments and cancellation. The following text is example text only and will need to be customized to fit your particular situation and country’s requirements. If you’re not sure of what you’re doing, we very highly suggest that you consult with a legal professional or use a lawyer-crafted generator like ours.]
+
+Purchasers must be at least [age limit]. We reserve the right to refuse service to anyone for any reason at any time. Our services are not available in jurisdictions where it is prohibited by law.
+
+Upon placing an order, customers will receive a confirmation email detailing the products ordered and the total cost. [Your Business] reserves the right to cancel an order at any time prior to dispatch, in the event of any unforeseen circumstances.
+
+We accept the following methods of payment: [e.g. Visa, MasterCard, American Express, and PayPal].
+
+All prices are subject to change without notice and are exclusive of any applicable taxes.
+
+[Products/services] purchased from [Your Business] will be [e.g. dispatched within three business days of the order and delivered within 5-7 business days]. We deliver to [e.g. all states in the U.S.].
+
+Customers may cancel their order within [duration e.g. 24 hours] of placing it, provided that the order has not yet been dispatched. To cancel an order, customers must [e.g. go to the dedicated section on their account and request cancellation].
+VI. Warranty/Guarantee Information
+
+[If you sell products or services on your site, you’ll also need to include details on warranty rights which is legally required under some countries’ consumer laws]
+
+All products offered by [Your Business] come with a standard [warranty duration e.g. 12-month] warranty covering defects in [e.g. material, workmanship]. This warranty does not cover [list all necessary, e.g. misuse, unauthorized modifications, or acts of nature].
+VII. Withdrawal Right
+
+[If you sell products or services on your site, you’ll also need to include details on withdrawal rights which is legally required under some conties’ consumer laws]
+
+Customers have the right to withdraw from the contract within [duration e.g. 14 days] without giving any reason. The withdrawal period will expire after [duration e.g. 14 days] from the day on which the customer acquires, or a third party other than [e.g. the carrier] and indicated by the customer acquires, [e.g. “physical possession of the goods”].
+VIII. Safety Information and Instructions for Use
+
+Our [products/services] must be used in accordance with the provided instructions and guidelines. Failure to do so can result in [e.g. “injury”, “Always ensure that the product is assembled correctly before use and keep out of reach of children”].
+
+—
+
+By using [Your Business] website/application, you agree to abide by these Terms and Conditions. Your continued use of the website/application after changes have been posted means you agree to be legally bound by these terms as updated and/or amended.
+
+Date of last update: ________
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+        </div>
+          
+        <button type="submit" class="btn btn-primary">Create Account</button>
+    </form>
+</div>
+{% endblock %}

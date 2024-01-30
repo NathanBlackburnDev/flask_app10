@@ -1,0 +1,18 @@
+/* Underline the current page in the Navbar */
+.nav-link[aria-current=page] {
+    text-decoration: underline;
+}
+
+/* Remove the logo when the menu button appears */
+@media only screen and (max-width: 991px) {
+    .navbar-brand .python-logo {
+        display: none !important;
+    }
+}
+
+/* Hide the logo until the menu button appears */
+@media only screen and (min-width: 991px) {
+    .navbar-brand .python-logo-resize {
+        display: none !important;
+    }
+}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+Log In
+{% endblock %}
+{% block content %}
+<link href="../static/css/login.css" rel="stylesheet">
+<!-- Login account form -->
+<div class="form-container">
+    <h1>Sign In</h1>
+    <form action="/login" method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" aria-label="Username" placeholder="Username..." name="username">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password..." name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+    </form>
+</div>
+{% endblock %}
